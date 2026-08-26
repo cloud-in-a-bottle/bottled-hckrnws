@@ -1,0 +1,23 @@
+bottled-hckrnws
+================
+
+This repository packages hckrnws for Cloud in a Bottle.
+
+hckrnws
+--------
+This image builds and distributes hckrnws, an alternative Hacker News reader.
+
+  Upstream:   https://github.com/rajatkulkarni95/hckrnws
+  Copyright:  Copyright (c) 2021 Rajat Kulkarni
+  License:    MIT
+  Built from: commit 7b71e87c23be2f0608a48ff916d9f2767e092c36
+
+The complete source corresponding to the hckrnws build is available at:
+
+  https://github.com/rajatkulkarni95/hckrnws/tree/7b71e87c23be2f0608a48ff916d9f2767e092c36
+
+hckrnws is built without source modifications. Its compiled files and license
+are copied into the runtime image by the Dockerfile.
+
+The files original to this wrapper repository are licensed under the MIT
+License in LICENSE.

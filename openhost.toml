@@ -1,0 +1,24 @@
+[app]
+name = "hckrnws"
+version = "0.1.0"
+description = "A clean, searchable Hacker News reader with multiple feeds, nested comments, dark mode, and local bookmarks"
+authors = ["Rajat Kulkarni", "Cloud in a Bottle"]
+
+[runtime.container]
+image = "Dockerfile"
+port = 8080
+
+[routing]
+# hckrnws is a static, account-free reader. API requests go directly from each
+# visitor's browser to Algolia, so public access does not create an open proxy.
+public_paths = ["/"]
+health_check = "/healthz"
+
+[resources]
+memory_mb = 64
+build_memory_mb = 768
+cpu_cores = 0.25
+
+[data]
+# Bookmarks and theme preferences are browser-local; the server is stateless.
+app_data = false
