@@ -27,6 +27,10 @@ test -n "$asset_path"
 fetch "$base_url$asset_path" > "$work_dir/asset"
 test -s "$work_dir/asset"
 
+fetch "$base_url/img/meta/site.webmanifest" > "$work_dir/manifest"
+grep -q '"/android-chrome-192x192.png"' "$work_dir/manifest"
+grep -q '"/android-chrome-512x512.png"' "$work_dir/manifest"
+
 for path in /img/favicon.ico /android-chrome-192x192.png /android-chrome-512x512.png; do
     fetch "$base_url$path" > /dev/null
 done
