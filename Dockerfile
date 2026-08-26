@@ -2,9 +2,9 @@ FROM docker.io/library/node:24-alpine@sha256:d32cdf619f63fe0471182d08996dd516c62
 
 RUN apk add --no-cache git
 
-ARG HCKRNWS_COMMIT=7b71e87c23be2f0608a48ff916d9f2767e092c36
 WORKDIR /src
-RUN git init \
+RUN HCKRNWS_COMMIT=7b71e87c23be2f0608a48ff916d9f2767e092c36 \
+    && git init \
     && git remote add origin https://github.com/rajatkulkarni95/hckrnws.git \
     && git fetch --depth 1 origin "$HCKRNWS_COMMIT" \
     && git checkout --detach FETCH_HEAD \
